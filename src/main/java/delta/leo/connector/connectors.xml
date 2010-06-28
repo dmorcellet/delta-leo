@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<connectors>
+	<connector type="BASIC" providerClass="delta.leo.connector.basic.BasicDataConnector" />
+	<connector type="SQL" providerClass="delta.leo.connector.sql.SqlDataConnector" />
+</connectors>

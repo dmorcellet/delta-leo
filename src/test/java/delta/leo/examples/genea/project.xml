@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project
+[
+	<!ENTITY model SYSTEM "file:model.xml">
+	<!ENTITY locations SYSTEM "file:locations.xml">
+	<!ENTITY bindings SYSTEM "file:bindings.xml">
+]>
+<PROJECT>
+  &model;
+  &locations;
+  &bindings;
+</PROJECT>

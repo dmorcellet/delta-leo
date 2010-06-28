@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SQL_BINDING CLASS="A">
+
+	<FIELD NAME="NAME" TABLE="ta" COLUMN="name"/>
+	<FIELD NAME="MY_COMPOUND.INDEX" TABLE="ta" COLUMN="index"/>
+	<FIELD NAME="MY_COMPOUND.NAME" TABLE="ta" COLUMN="name2"/>
+
+</SQL_BINDING>
+
+<SQL_BINDING CLASS="B">
+
+	<FIELD NAME="NOM" TABLE="personne" COLUMN="nom"/>
+	<FIELD NAME="PRENOMS" TABLE="personne" COLUMN="prenoms"/>
+	<FIELD NAME="SIGNATURE" TABLE="personne" COLUMN="signature"/>
+	<FIELD NAME="NAISSANCE" TABLE="personne" COLUMN="date_naissance"/>
+	<FIELD NAME="INFOS_NAISSANCE" TABLE="personne" COLUMN="infos_n"/>
+	<FIELD NAME="DECES" TABLE="personne" COLUMN="date_deces"/>
+	<FIELD NAME="INFOS_DECES" TABLE="personne" COLUMN="infos_d"/>
+	<FIELD NAME="NAISSANCE" TABLE="personne" COLUMN="date_naissance"/>
+	<FIELD NAME="COMMENTAIRE" TABLE="personne" COLUMN="commentaire"/>
+
+	<FIELD NAME="PERE" TABLE="personne" COLUMN="cle_pere"/>
+	<FIELD NAME="MERE" TABLE="personne" COLUMN="cle_mere"/>
+	<FIELD NAME="PARRAIN" TABLE="personne" COLUMN="cle_parrain"/>
+	<FIELD NAME="MARRAINE" TABLE="personne" COLUMN="cle_marraine"/>
+	<FIELD NAME="LIEU_NAISSANCE" TABLE="personne" COLUMN="cle_ln"/>
+	<FIELD NAME="LIEU_DECES" TABLE="personne" COLUMN="cle_ld"/>
+</SQL_BINDING>
+	<ENTITY NAME="B" SUPER="A">
+		<INTEGER NAME="INDEX" MIN="1" MAX="5">
+			<PROPERTIES MANDATORY="true" ID="true" NAME="false"/>
+		</INTEGER>
+		<STRING NAME="NAME" MIN="3" MAX="10" MULTILINES="true">
+			<PROPERTIES MANDATORY="true" ID="true" NAME="false"/>
+		</STRING>
+		<CHOICE NAME="OPTIONS" MULTIPLE="true">
+			<PROPERTIES MANDATORY="true" ID="true" NAME="false"/>
+			<OPTIONS>
+				<OPTION NAME="OPTION1" VALUE="1"/>
+				<OPTION NAME="OPTION2" VALUE="2"/>
+				<OPTION NAME="OPTION3" VALUE="3"/>
+			</OPTIONS>
+		</CHOICE>
+		<DATE NAME="BIRTHDATE">
+			<PROPERTIES MANDATORY="true" ID="true" NAME="false"/>
+		</DATE>
+	</ENTITY>
+	<BINARY_ASSOCIATION NAME="A AND B">
+		<A ENTITY_NAME="A" ROLE="A_ROLE"/>
+		<B ENTITY_NAME="B" ROLE="B_ROLE"/>
+		<AtoB MIN="0" MAX="INFINITY" ORDERED="true" TRAVERSABLE="true" MEANING="A TO B"/>
+		<BtoA MIN="1" MAX="3" ORDERED="false" TRAVERSABLE="false" MEANING="B TO A"/>
+	</BINARY_ASSOCIATION>
+	<COMPOSITION NAME="A INCLUDES B" SOURCE="A" MIN="1" MAX="5" TARGET="B" />
+</MODEL>

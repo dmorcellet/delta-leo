@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LOCATIONS>
+  <LOCATION ID="MySQLLocation" TYPE="SQL">
+  	<PARAM NAME="URL" VALUE="jdbc:mysql://localhost:3306/genea" />
+  	<PARAM NAME="JDBC_DRIVER" VALUE="com.mysql.jdbc.Driver" />
+  	<PARAM NAME="USER" VALUE="dada" />
+  	<PARAM NAME="PASSWORD" VALUE="glor4fin3del" />
+  	<PARAM NAME="DATABASE_NAME" VALUE="genea" />
+  	<PARAM NAME="MIN_CONNECTIONS" VALUE="2" />
+  	<PARAM NAME="MAX_CONNECTIONS" VALUE="5" />
+  </LOCATION>
+</LOCATIONS>
