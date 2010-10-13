@@ -44,6 +44,13 @@ public class EditableModel implements Model
     return _name;
   }
 
+  /**
+   * Add a new entity to this model.
+   * @param name Name of the new entity.
+   * @param superEntity Parent entity (<code>null</code> if the new entity
+   * has no parent entity).
+   * @return The newly created entity.
+   */
   public EditableEntity newEntity(String name, EditableEntity superEntity)
   {
     EditableEntity old=_entities.get(name);
@@ -67,6 +74,7 @@ public class EditableModel implements Model
 
   /**
    * Get an entity by name.
+   * @param entityName Name of the targeted entity.
    * @return An entity or <code>null</code> if no such entity was found in this model.
    */
   public EditableEntity getEditableEntity(String entityName)
@@ -81,6 +89,12 @@ public class EditableModel implements Model
     return ret;
   }
 
+  /**
+   * Helper method to add a binary association between two entities.
+   * @param e1 An entity.
+   * @param e2 Another entity.
+   * @return A binary association relation.
+   */
   public EditableRelation addBinaryAssociation(Entity e1, Entity e2)
   {
     checkEntity(e1);

@@ -13,6 +13,10 @@ import delta.leo.model.relation.impl.EditableRelation;
 import delta.leo.model.relation.impl.EditableRelationLink;
 import delta.leo.model.relation.impl.EditableRelationTier;
 
+/**
+ * Parser for relations stored in XML.
+ * @author DAM
+ */
 public class RelationXMLParser
 {
   // Tags
@@ -31,14 +35,20 @@ public class RelationXMLParser
   private static final String TRAVERSABLE_ATTR="TRAVERSABLE";
   private static final String MEANING_ATTR="MEANING";
 
-  public void parseRelations(EditableModel model, Element root)
+  /**
+   * Parse the relations described in the given root node, and attach
+   * them to the given model.
+   * @param model Model.
+   * @param rootNode Root node.
+   */
+  public void parseRelations(EditableModel model, Element rootNode)
   {
-    parseBinaryAssociations(model,root);
+    parseBinaryAssociations(model,rootNode);
   }
 
-  private void parseBinaryAssociations(EditableModel model, Element root)
+  private void parseBinaryAssociations(EditableModel model, Element rootNode)
   {
-    NodeList nl=root.getElementsByTagName(BA_TAG);
+    NodeList nl=rootNode.getElementsByTagName(BA_TAG);
     int nbNodes=nl.getLength();
     Element e;
     for(int i=0;i<nbNodes;i++)

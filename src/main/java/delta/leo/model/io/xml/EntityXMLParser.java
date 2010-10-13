@@ -46,6 +46,12 @@ public class EntityXMLParser
     _propertiesParser=new PropertiesXMLParser(registry);
   }
 
+  /**
+   * Parse the entities described in the given root node, and attach
+   * them to the given model.
+   * @param model Model.
+   * @param rootNode Root node.
+   */
   public void parseEntities(EditableModel model, Element rootNode)
   {
     NodeList nl=rootNode.getElementsByTagName(ENTITY_TAG);
@@ -76,7 +82,7 @@ public class EntityXMLParser
       }
       else
       {
-        // todo warn
+        _logger.warn("No name attribute for this entity.");
       }
     }
   }

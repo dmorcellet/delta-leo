@@ -8,6 +8,10 @@ import delta.common.utils.xml.DOMParsingTools;
 import delta.leo.model.Model;
 import delta.leo.model.impl.EditableModel;
 
+/**
+ * Parser for models stored in XML.
+ * @author DAM
+ */
 public class ModelXMLParser
 {
   private static final String NAME_ATTR="NAME";

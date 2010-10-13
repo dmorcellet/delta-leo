@@ -29,11 +29,21 @@ public class EditableEntity implements Entity
    */
   private ListOrderedMap<EditableField> _fieldsList;
 
+  /**
+   * Constructor.
+   * @param entityName Entity name.
+   */
   public EditableEntity(String entityName)
   {
     this(entityName,null);
   }
 
+  /**
+   * Constructor.
+   * @param entityName Entity name.
+   * @param superEntity Parent entity (<code>null</code> if the new entity
+   * has no parent entity).
+   */
   public EditableEntity(String entityName, EditableEntity superEntity)
   {
     _name=entityName;
@@ -52,7 +62,7 @@ public class EditableEntity implements Entity
   }
 
   /**
-   * Indicates if this entity is specified entity or inherits from it.
+   * Indicates if this entity is the specified entity or inherits from it.
    * @param entity Entity to test.
    * @return <code>true</code> or <code>false</code>.
    */
@@ -63,6 +73,11 @@ public class EditableEntity implements Entity
     return false;
   }
 
+  /**
+   * Add a new field to this entity.
+   * @param name Name of the new field.
+   * @return The newly created field.
+   */
   public EditableField newField(String name)
   {
     EditableField oldField=getEditableField(name);
@@ -80,6 +95,11 @@ public class EditableEntity implements Entity
     return getEditableField(fieldName);
   }
 
+  /**
+   * Get a field by name.
+   * @param fieldName Name of the field to get.
+   * @return A field or <code>null</code> if there's no such field. 
+   */
   public EditableField getEditableField(String fieldName)
   {
     EditableField f=_fieldsList.get(fieldName);
@@ -115,6 +135,12 @@ public class EditableEntity implements Entity
     return ret;
   }
 
+  /**
+   * Get the fields that have a given property.
+   * @param property Property to test.
+   * @return A (possibly empty) list of all the fields of this entity
+   * that have the specified property (including fields defined in parent entities, if any). 
+   */
   public List<EditableField> getEditableFields(SymbolicProperty property)
   {
     List<EditableField> ret=new ArrayList<EditableField>();
