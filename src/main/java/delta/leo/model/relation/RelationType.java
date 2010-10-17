@@ -1,6 +1,7 @@
 package delta.leo.model.relation;
 
 /**
+ * Relation type.
  * @author DAM
  */
 public class RelationType
@@ -13,15 +14,15 @@ public class RelationType
    * Composition.
    */
   public static final RelationType COMPOSITION=new RelationType("COMPOSITION",2,2);
-  /**
-   * Specialization.
-   */
-  public static final RelationType SPECIALIZATION=new RelationType("SPECIALIZATION",2,2);
 
   private String _name;
-  // Minimum number of tiers
+  /**
+   * Minimum number of tiers.
+   */
   private int _minTiers;
-  // Maximum number of tiers
+  /**
+   * Maximum number of tiers.
+   */
   private int _maxTiers;
 
   private RelationType(String name, int minTiers, int maxTiers)
@@ -31,16 +32,28 @@ public class RelationType
     _maxTiers=maxTiers;
   }
 
+  /**
+   * Get the name of this relation type.
+   * @return a name.
+   */
   public String getName()
   {
     return _name;
   }
 
+  /**
+   * Get the minimum number of tiers in a relation of this type.
+   * @return a number of tiers.
+   */
   public int getMininumNumberOfTiers()
   {
     return _minTiers;
   }
 
+  /**
+   * Get the maximum number of tiers in a relation of this type.
+   * @return a number of tiers.
+   */
   public int getMaximumNumberOfTiers()
   {
     return _maxTiers;

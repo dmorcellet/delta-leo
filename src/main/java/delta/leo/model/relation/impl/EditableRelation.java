@@ -9,6 +9,10 @@ import delta.leo.model.relation.RelationLink;
 import delta.leo.model.relation.RelationTier;
 import delta.leo.model.relation.RelationType;
 
+/**
+ * Implementation of a relation in the Entity-Relationships data modeling paradigm.
+ * @author DAM
+ */
 public class EditableRelation implements Relation
 {
   private String _name;
@@ -16,6 +20,11 @@ public class EditableRelation implements Relation
   private final EditableRelationTier[] _tiers;
   private final EditableRelationLink[] _links;
 
+  /**
+   * Constructor.
+   * @param type Relation type.
+   * @param involvedEntities List of involved entities.
+   */
   public EditableRelation(RelationType type, List<Entity> involvedEntities)
   {
     _name="";
@@ -42,6 +51,7 @@ public class EditableRelation implements Relation
     }
   }
 
+  
   private int getLinkIndex(int tierIndex1, int tierIndex2)
   {
     int ret=(tierIndex1*_tiers.length)+tierIndex2;
@@ -58,11 +68,20 @@ public class EditableRelation implements Relation
     return _name;
   }
 
+  /**
+   * Set the name of this relation.
+   * @param name name to set for this relation.
+   */
   public void setName(String name)
   {
     _name=name;
   }
 
+  /**
+   * Get the tier at the specified index.
+   * @param index Index of the targeted tier (from 0 to the number of tiers-1).
+   * @return A tier.
+   */
   public EditableRelationTier getTier(int index)
   {
     return _tiers[index];
@@ -110,6 +129,12 @@ public class EditableRelation implements Relation
     return getEditableLink(from,to);
   }
 
+  /**
+   * Get the link that links the specified tiers.
+   * @param from Source tier.
+   * @param to Target tier.
+   * @return A relation link or <code>null</code> if not found.
+   */
   public EditableRelationLink getEditableLink(RelationTier from, RelationTier to)
   {
     int fromIndex=from.getIndex();

@@ -1,5 +1,9 @@
 package delta.leo.model;
 
+/**
+ * Cardinality.
+ * @author DAM
+ */
 public class Cardinality
 {
   /**

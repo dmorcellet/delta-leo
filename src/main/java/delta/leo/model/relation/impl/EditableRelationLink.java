@@ -4,6 +4,10 @@ import delta.leo.model.Cardinality;
 import delta.leo.model.relation.RelationLink;
 import delta.leo.model.relation.RelationTier;
 
+/**
+ * Implementation of a relation link.
+ * @author DAM
+ */
 public class EditableRelationLink implements RelationLink
 {
   private RelationTier _source;
@@ -15,6 +19,11 @@ public class EditableRelationLink implements RelationLink
   private boolean _traversable;
   private boolean _ordered;
 
+  /**
+   * Constructor.
+   * @param source Source tier.
+   * @param target Target tier.
+   */
   public EditableRelationLink(RelationTier source, RelationTier target)
   {
     _source=source;
@@ -41,6 +50,10 @@ public class EditableRelationLink implements RelationLink
     return _minOccurrences;
   }
 
+  /**
+   * Set the minimum number of occurrences.
+   * @param minOccurrences a number of occurrences.
+   */
   public void setMinOccurrences(int minOccurrences)
   {
     if (minOccurrences<0)
@@ -56,6 +69,10 @@ public class EditableRelationLink implements RelationLink
     return _maxOccurrences;
   }
 
+  /**
+   * Set the maximum number of occurrences.
+   * @param maxOccurrences a number of occurrences.
+   */
   public void setMaxOccurrences(int maxOccurrences)
   {
     if (maxOccurrences<0)
@@ -71,6 +88,10 @@ public class EditableRelationLink implements RelationLink
     return _traversable;
   }
 
+  /**
+   * Set the traversable flag.
+   * @param traversable value to set for this flag.
+   */
   public void setTraversable(boolean traversable)
   {
     _traversable=traversable;
@@ -81,6 +102,10 @@ public class EditableRelationLink implements RelationLink
     return _ordered;
   }
 
+  /**
+   * Set the ordered flag.
+   * @param ordered value to set for this flag.
+   */
   public void setOrdered(boolean ordered)
   {
     _ordered=ordered;
@@ -91,6 +116,10 @@ public class EditableRelationLink implements RelationLink
     return _label;
   }
 
+  /**
+   * Set the label for this relation link.
+   * @param label label to set.
+   */
   public void setLabel(String label)
   {
     _label=label;
