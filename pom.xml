@@ -27,5 +27,10 @@
       <artifactId>delta-utils-types</artifactId>
       <version>1.0-SNAPSHOT</version>
     </dependency>
+    <dependency>
+      <groupId>com.dam.delta4j</groupId>
+      <artifactId>delta-utils-jdbc</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
   </dependencies>
 </project>
