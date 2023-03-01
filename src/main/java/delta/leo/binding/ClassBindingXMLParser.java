@@ -3,7 +3,6 @@ package delta.leo.binding;
 import java.util.Iterator;
 import java.util.List;
 
-import org.apache.log4j.Logger;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 
@@ -15,15 +14,12 @@ import delta.leo.location.DataLocation;
 import delta.leo.metadata.ObjectClass;
 import delta.leo.metadata.ObjectsModel;
 import delta.leo.model.entity.field.Field;
-import delta.leo.utils.LeoLoggers;
 
 /**
  * @author DAM
  */
 public class ClassBindingXMLParser
 {
-  private static final Logger _logger=LeoLoggers.getLeoLogger();
-
   // Tags
   // -- Field binding tags
   private static final String FIELD_TAG="FIELD";

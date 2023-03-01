@@ -4,15 +4,13 @@ import java.util.HashMap;
 
 import org.apache.log4j.Logger;
 
-import delta.common.utils.traces.LoggersRegistry;
-
 /**
  * todo Use special Reference/ReferenceQueue objects to keep used/referenced objects in this cache.
  * @author DAM
  */
 public class ObjectsCache
 {
-  private static final Logger _logger=LoggersRegistry.getLogger("LEO");
+  private static final Logger LOGGER=Logger.getLogger(ObjectsCache.class);
 
   private HashMap<ObjectId,ObjectInstance> _cache;
 
@@ -35,15 +33,15 @@ public class ObjectsCache
       ObjectInstance oldOne=_cache.put(id,object);
       if (oldOne!=null)
       {
-        if (_logger.isDebugEnabled())
+        if (LOGGER.isDebugEnabled())
         {
-          _logger.debug("Removed old cache value for object ID : "+id);
+          LOGGER.debug("Removed old cache value for object ID : "+id);
         }
       }
     }
     else
     {
-      _logger.error("Cannot cache an object with no ID.");
+      LOGGER.error("Cannot cache an object with no ID.");
     }
   }
 

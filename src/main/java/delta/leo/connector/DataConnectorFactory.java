@@ -5,11 +5,10 @@ import org.apache.log4j.Logger;
 import delta.common.utils.misc.GenericFactory;
 import delta.leo.data.ObjectsSource;
 import delta.leo.location.DataLocation;
-import delta.leo.utils.LeoLoggers;
 
 public class DataConnectorFactory
 {
-  private static final Logger _logger=LeoLoggers.getLeoDataLogger();
+  private static final Logger LOGGER=Logger.getLogger(DataConnectorFactory.class);
 
   private static DataConnectorFactory _instance=null;
 

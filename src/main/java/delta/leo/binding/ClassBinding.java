@@ -12,7 +12,6 @@ import org.apache.log4j.Logger;
 import delta.common.utils.properties.SymbolicPropertiesSet;
 import delta.leo.metadata.ObjectClass;
 import delta.leo.model.entity.field.Field;
-import delta.leo.utils.LeoLoggers;
 
 /**
  * Binding definition for a single class.
@@ -20,7 +19,7 @@ import delta.leo.utils.LeoLoggers;
  */
 public class ClassBinding
 {
-  private static final Logger _logger=LeoLoggers.getLeoLogger();
+  private static final Logger LOGGER=Logger.getLogger(ClassBinding.class);
 
   /**
    * Targeted class.
@@ -114,13 +113,13 @@ public class ClassBinding
           }
           return info;
         }
-        _logger.error("Field binding already registered ["+tableName+"/"+fieldName+"]");
+        LOGGER.error("Field binding already registered ["+tableName+"/"+fieldName+"]");
         return null;
       }
-      _logger.error("The logical field ["+logicalFieldName+"] of class ["+_class.getName()+"] already has a field binding.");
+      LOGGER.error("The logical field ["+logicalFieldName+"] of class ["+_class.getName()+"] already has a field binding.");
       return null;
     }
-    _logger.error("Cannot register a field binding with no associated logical field ["+tableName+"/"+fieldName+"]");
+    LOGGER.error("Cannot register a field binding with no associated logical field ["+tableName+"/"+fieldName+"]");
     return null;
   }
 

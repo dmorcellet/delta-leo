@@ -10,7 +10,6 @@ import org.apache.log4j.Logger;
 
 import delta.leo.metadata.ObjectClass;
 import delta.leo.model.entity.field.Field;
-import delta.leo.utils.LeoLoggers;
 
 /**
  * Storage for an object value.
@@ -18,7 +17,7 @@ import delta.leo.utils.LeoLoggers;
  */
 public class ObjectValue
 {
-  private static final Logger _logger=LeoLoggers.getLeoLogger();
+  private static final Logger LOGGER=Logger.getLogger(ObjectValue.class);
 
   private ObjectClass _class;
   private Object[] _values;
@@ -131,7 +130,7 @@ public class ObjectValue
     }
     else
     {
-      _logger.error("Cannot get value of non-existing field ["+field.getName()+"]");
+      LOGGER.error("Cannot get value of non-existing field ["+field.getName()+"]");
     }
     return value;
   }

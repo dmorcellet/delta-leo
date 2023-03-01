@@ -20,11 +20,10 @@ import delta.leo.model.entity.field.FieldProperties;
 import delta.leo.model.entity.field.FieldPropertyNames;
 import delta.leo.model.impl.EditableField;
 import delta.leo.model.relation.RelationLink;
-import delta.leo.utils.LeoLoggers;
 
 public class ObjectClass
 {
-  private static final Logger _logger=LeoLoggers.getLeoDataLogger();
+  private static final Logger LOGGER=Logger.getLogger(ObjectClass.class);
 
   /**
    * Parent class (if any).
@@ -135,7 +134,7 @@ public class ObjectClass
       integer=_map.put(f.getName(),Integer.valueOf(i));
       if (integer!=null)
       {
-        _logger.warn("Duplicate field ID : "+f.getName());
+        LOGGER.warn("Duplicate field ID : "+f.getName());
       }
     }
   }

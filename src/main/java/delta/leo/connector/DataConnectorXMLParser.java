@@ -12,7 +12,6 @@ import delta.common.utils.misc.GenericFactory;
 import delta.common.utils.url.URLTools;
 import delta.common.utils.xml.DOMParsingTools;
 import delta.leo.data.ObjectsSource;
-import delta.leo.utils.LeoLoggers;
 
 /**
  * Parser used to build a data connector factory from the connectors.xml file.
@@ -20,7 +19,7 @@ import delta.leo.utils.LeoLoggers;
  */
 public class DataConnectorXMLParser
 {
-  private static final Logger _logger=LeoLoggers.getLeoLogger();
+  private static final Logger LOGGER=Logger.getLogger(DataConnectorXMLParser.class);
 
   // Tags
   private static final String CONNECTOR_TAG="connector";
@@ -52,7 +51,7 @@ public class DataConnectorXMLParser
     }
     else
     {
-      _logger.error("Cannot find the connectors.xml description file !");
+      LOGGER.error("Cannot find the connectors.xml description file !");
     }
     return ret;
   }

@@ -10,7 +10,6 @@ import org.apache.log4j.Logger;
 
 import delta.common.utils.Tools;
 import delta.leo.location.sql.SqlDataLocation;
-import delta.leo.utils.LeoLoggers;
 
 /**
  * Manages a pool of SQL connections to the same data source.
@@ -18,7 +17,7 @@ import delta.leo.utils.LeoLoggers;
  */
 public class SqlConnectionsPool
 {
-  private static final Logger _logger=LeoLoggers.getLeoSqlLogger();
+  private static final Logger LOGGER=Logger.getLogger(SqlConnectionsPool.class);
 
   private SqlDataLocation _location;
   private List<Connection> _freeConnections;
@@ -62,7 +61,7 @@ public class SqlConnectionsPool
     }
     catch(ClassNotFoundException cnfException)
     {
-      _logger.error("Could not find SQL driver !", cnfException);
+      LOGGER.error("Could not find SQL driver !", cnfException);
       return false;
     }
     return true;
@@ -95,7 +94,7 @@ public class SqlConnectionsPool
     }
     catch(SQLException sqlException)
     {
-      _logger.error("Got exception while creating a connection for location "+_location, sqlException);
+      LOGGER.error("Got exception while creating a connection for location "+_location, sqlException);
       return false;
     }
     return true;
@@ -121,7 +120,7 @@ public class SqlConnectionsPool
         }
         else
         {
-          _logger.error("No more connections available !");
+          LOGGER.error("No more connections available !");
           return null;
         }
       }
@@ -161,7 +160,7 @@ public class SqlConnectionsPool
     }
     catch(SQLException e)
     {
-      _logger.error("Cannot close connection !",e);
+      LOGGER.error("Cannot close connection !",e);
     }
 
     if(_busyConnections.remove(connection))
@@ -183,7 +182,7 @@ public class SqlConnectionsPool
   {
     if(_busyConnections.size()>0)
     {
-      _logger.warn("Still "+_busyConnections.size()+" busy connection(s) when terminating connection pool for location "+_location);
+      LOGGER.warn("Still "+_busyConnections.size()+" busy connection(s) when terminating connection pool for location "+_location);
     }
     terminateConnectionList(_freeConnections);
     terminateConnectionList(_busyConnections);
@@ -205,7 +204,7 @@ public class SqlConnectionsPool
       }
       catch(SQLException sqlException)
       {
-        _logger.error("Got exception while closing a connection for location "+_location, sqlException);
+        LOGGER.error("Got exception while closing a connection for location "+_location, sqlException);
       }
     }
   }

@@ -16,7 +16,6 @@ import delta.leo.model.entity.field.FieldProperties;
 import delta.leo.model.impl.EditableEntity;
 import delta.leo.model.impl.EditableField;
 import delta.leo.model.impl.EditableModel;
-import delta.leo.utils.LeoLoggers;
 
 /**
  * Parser for entities stored in XML.
@@ -24,7 +23,7 @@ import delta.leo.utils.LeoLoggers;
  */
 public class EntityXMLParser
 {
-  private static final Logger _logger=LeoLoggers.getLeoModelLogger();
+  private static final Logger LOGGER=Logger.getLogger(EntityXMLParser.class);
 
   // Tags
   private static final String ENTITY_TAG="ENTITY";
@@ -82,7 +81,7 @@ public class EntityXMLParser
       }
       else
       {
-        _logger.warn("No name attribute for this entity.");
+        LOGGER.warn("No name attribute for this entity.");
       }
     }
   }

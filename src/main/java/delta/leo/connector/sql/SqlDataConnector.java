@@ -20,7 +20,6 @@ import delta.leo.location.DataLocation;
 import delta.leo.location.sql.SqlDataLocation;
 import delta.leo.metadata.ObjectClass;
 import delta.leo.model.entity.field.Field;
-import delta.leo.utils.LeoLoggers;
 
 /**
  * A data connector for SQL databases (through JDBC).
@@ -28,7 +27,7 @@ import delta.leo.utils.LeoLoggers;
  */
 public class SqlDataConnector extends DataConnector
 {
-  private static final Logger _logger=LeoLoggers.getLeoSqlLogger();
+  private static final Logger LOGGER=Logger.getLogger(SqlDataConnector.class);
 
   /**
    * Pool of SQL connections.
@@ -132,7 +131,7 @@ public class SqlDataConnector extends DataConnector
     }
     catch (SQLException sqlException)
     {
-      _logger.error("SQL exception",sqlException);
+      LOGGER.error("SQL exception",sqlException);
       _pool.releaseBadConnection(connection);
       ret=null;
     }

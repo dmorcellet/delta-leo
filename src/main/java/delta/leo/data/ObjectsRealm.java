@@ -10,14 +10,13 @@ import org.apache.log4j.Logger;
 import delta.leo.binding.BindingsManager;
 import delta.leo.location.DataLocation;
 import delta.leo.metadata.ObjectsModel;
-import delta.leo.utils.LeoLoggers;
 
 /**
  * @author DAM
  */
 public class ObjectsRealm
 {
-  private static final Logger _logger=LeoLoggers.getLeoDataLogger();
+  private static final Logger LOGGER=Logger.getLogger(ObjectsRealm.class);
 
   private ObjectsModel _model;
   /**
@@ -107,7 +106,7 @@ public class ObjectsRealm
       objectsSource=it.next();
       if (!objectsSource.init())
       {
-        _logger.warn("Could not init objects source "+objectsSource);
+        LOGGER.warn("Could not init objects source "+objectsSource);
         nbFailed++;
       }
     }
@@ -123,7 +122,7 @@ public class ObjectsRealm
       objectsSource=it.next();
       if (!objectsSource.terminate())
       {
-        _logger.warn("Could not terminate objects source "+objectsSource);
+        LOGGER.warn("Could not terminate objects source "+objectsSource);
       }
     }
   }

@@ -7,7 +7,6 @@ import org.apache.log4j.Logger;
 import delta.common.utils.types.Type;
 import delta.leo.metadata.ObjectClass;
 import delta.leo.model.entity.field.Field;
-import delta.leo.utils.LeoLoggers;
 
 /**
  * A generic Object Identifier based on a list of field values.
@@ -15,7 +14,7 @@ import delta.leo.utils.LeoLoggers;
  */
 public class ObjectId
 {
-  private static final Logger _logger=LeoLoggers.getLeoDataLogger();
+  private static final Logger LOGGER=Logger.getLogger(ObjectId.class);
 
   private ObjectsSource _objectsSource;
   private ObjectClass _class;
@@ -52,7 +51,7 @@ public class ObjectId
     int nbValuesToSet=nbIDFields;
     if (nbValues!=nbIDFields)
     {
-      _logger.error("Invalid number of values for an object ID. Expected "+nbIDFields+", got "+nbValues);
+      LOGGER.error("Invalid number of values for an object ID. Expected "+nbIDFields+", got "+nbValues);
       nbValuesToSet=Math.min(nbIDFields,nbValues);
     }
     for(int i=0;i<nbValuesToSet;i++)
