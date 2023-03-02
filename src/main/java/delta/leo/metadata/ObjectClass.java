@@ -21,6 +21,10 @@ import delta.leo.model.entity.field.FieldPropertyNames;
 import delta.leo.model.impl.EditableField;
 import delta.leo.model.relation.RelationLink;
 
+/**
+ * Describes an object class.
+ * @author DAM
+ */
 public class ObjectClass
 {
   private static final Logger LOGGER=Logger.getLogger(ObjectClass.class);
@@ -139,6 +143,10 @@ public class ObjectClass
     }
   }
 
+  /**
+   * Get the name of this class.
+   * @return A name.
+   */
 	public String getName()
 	{
 	  return _name;
@@ -190,6 +198,11 @@ public class ObjectClass
     return ret;
   }
 
+  /**
+   * Get a field description using its name.
+   * @param name A field name.
+   * @return A field or <code>null</code> if not found.
+   */
   public Field getFieldByName(String name)
   {
     Integer index=_map.get(name);
@@ -212,27 +225,48 @@ public class ObjectClass
     return index;
   }
 
+  /**
+   * Get the field at the given index.
+   * @param index Field index, starting at 0.
+   * @return A field.
+   */
   public Field getField(int index)
   {
     return _allFields[index];
   }
 
+  /**
+   * Get the total number of fields in this class (including optional parent classes).
+   * @return A fields count.
+   */
   public int getNumberOfFields()
   {
     return _allFields.length;
   }
 
+  /**
+   * Get the parent class.
+   * @return A class or <code>null</code> if no parent.
+   */
   public ObjectClass getParent()
 	{
 		return _parent;
 	}
 
+  /**
+   * Build a new instance of this class.
+   * @return the newly built instance of this class.
+   */
   public ObjectInstance newInstance()
   {
     ObjectInstance ret=new ObjectInstance(this);
     return ret;
   }
 
+  /**
+   * Dump the contents of this class to the given stream.
+   * @param out Output stream.
+   */
   public void dump(PrintStream out)
   {
     out.println("Name="+getName());

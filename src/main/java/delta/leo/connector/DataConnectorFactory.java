@@ -1,15 +1,11 @@
 package delta.leo.connector;
 
-import org.apache.log4j.Logger;
-
 import delta.common.utils.misc.GenericFactory;
 import delta.leo.data.ObjectsSource;
 import delta.leo.location.DataLocation;
 
 public class DataConnectorFactory
 {
-  private static final Logger LOGGER=Logger.getLogger(DataConnectorFactory.class);
-
   private static DataConnectorFactory _instance=null;
 
   private GenericFactory<DataConnector> _connectorsFactory;

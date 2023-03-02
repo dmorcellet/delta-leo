@@ -35,6 +35,7 @@ public class ObjectsManager
    * Constructor.
    * @param source Data source.
    * @param clazz Managed class.
+   * @param binding Class binding.
    */
   public ObjectsManager(ObjectsSource source, ObjectClass clazz, ClassBinding binding)
   {

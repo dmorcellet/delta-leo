@@ -41,16 +41,28 @@ public class AbstractWorkSpaceListener implements WorkSpaceListener
     }
   }
 
+  /**
+   * Called when an object was added.
+   * @param event Source event.
+   */
   public void objectAdded(WorkSpaceEvent event)
   {
     // Nothing to do !!
   }
 
+  /**
+   * Called when an object was removed.
+   * @param event Source event.
+   */
   public void objectRemoved(WorkSpaceEvent event)
   {
     // Nothing to do !!
   }
 
+  /**
+   * Called when an object changed.
+   * @param event Source event.
+   */
   public void objectChanged(WorkSpaceEvent event)
   {
     // Nothing to do !!
