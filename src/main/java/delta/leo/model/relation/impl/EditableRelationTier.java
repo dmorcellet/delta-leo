@@ -25,16 +25,19 @@ public class EditableRelationTier implements RelationTier
     _role="";
   }
 
+  @Override
   public int getIndex()
   {
     return _index;
   }
 
+  @Override
   public Entity getEntity()
   {
     return _entity;
   }
 
+  @Override
   public String getRole()
   {
     return _role;

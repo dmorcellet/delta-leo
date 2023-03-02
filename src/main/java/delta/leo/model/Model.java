@@ -27,7 +27,7 @@ public interface Model
 
   /**
    * Get a list of all the entities of this model.
-   * @return a list of entities. 
+   * @return a list of entities.
    */
   public List<Entity> getEntities();
 
@@ -40,7 +40,7 @@ public interface Model
 
   /**
    * Get a list of all the relations of this model.
-   * @return a list of relations. 
+   * @return a list of relations.
    */
   public List<Relation> getRelations();
 

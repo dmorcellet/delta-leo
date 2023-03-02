@@ -39,6 +39,7 @@ public class EditableModel implements Model
    * Get the name of this model.
    * @return the name of this model.
    */
+  @Override
   public String getName()
   {
     return _name;
@@ -67,6 +68,7 @@ public class EditableModel implements Model
    * Get an entity by name.
    * @return An entity or <code>null</code> if no such entity was found in this model.
    */
+  @Override
   public Entity getEntity(String entityName)
   {
     return _entities.get(entityName);
@@ -82,6 +84,7 @@ public class EditableModel implements Model
     return _entities.get(entityName);
   }
 
+  @Override
   public List<Entity> getEntities()
   {
     List<Entity> ret=new ArrayList<Entity>();
@@ -117,6 +120,7 @@ public class EditableModel implements Model
     }
   }
 
+  @Override
   public Relation getRelation(String relationName)
   {
     for(Relation relation : _relations)
@@ -129,6 +133,7 @@ public class EditableModel implements Model
     return null;
   }
 
+  @Override
   public List<Relation> getRelations()
   {
     List<Relation> ret=new ArrayList<Relation>();
@@ -136,6 +141,7 @@ public class EditableModel implements Model
     return ret;
   }
 
+  @Override
   public List<RelationLink> getLinksFrom(Entity e, boolean useTraversability)
   {
     List<RelationLink> ret=new ArrayList<RelationLink>();

@@ -52,11 +52,13 @@ public class EditableField implements Field
     _properties=properties;
   }
 
+  @Override
   public String getName()
   {
     return _name;
   }
 
+  @Override
   public Type getType()
   {
     return _type;
@@ -71,6 +73,7 @@ public class EditableField implements Field
     _type=type;
   }
 
+  @Override
   public SymbolicPropertiesSet getProperties()
   {
     return _properties;
@@ -99,6 +102,7 @@ public class EditableField implements Field
    * @param property Property to test.
    * @return <code>true</code> if it has this property, <code>false</code> otherwise.
    */
+  @Override
   public boolean hasProperty(SymbolicProperty property)
   {
    return _properties.hasProperty(property);

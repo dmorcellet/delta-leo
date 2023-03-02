@@ -51,18 +51,20 @@ public class EditableRelation implements Relation
     }
   }
 
-  
+
   private int getLinkIndex(int tierIndex1, int tierIndex2)
   {
     int ret=(tierIndex1*_tiers.length)+tierIndex2;
     return ret;
   }
 
+  @Override
   public RelationType getType()
   {
     return _type;
   }
 
+  @Override
   public String getName()
   {
     return _name;
@@ -87,6 +89,7 @@ public class EditableRelation implements Relation
     return _tiers[index];
   }
 
+  @Override
   public List<RelationTier> getRelationsTiers()
   {
     List<RelationTier> ret=new ArrayList<RelationTier>();
@@ -97,6 +100,7 @@ public class EditableRelation implements Relation
     return ret;
   }
 
+  @Override
   public RelationTier getTierByRole(String role)
   {
     for(int i=0;i<_tiers.length;i++)
@@ -109,6 +113,7 @@ public class EditableRelation implements Relation
     return null;
   }
 
+  @Override
   public RelationLink getLinkByRoles(String sourceRole, String targetRole)
   {
     RelationLink ret=null;
@@ -124,6 +129,7 @@ public class EditableRelation implements Relation
     return ret;
   }
 
+  @Override
   public RelationLink getLink(RelationTier from, RelationTier to)
   {
     return getEditableLink(from,to);
@@ -152,6 +158,7 @@ public class EditableRelation implements Relation
     return link;
   }
 
+  @Override
   public List<RelationLink> getLinksFrom(Entity e)
   {
     List<RelationLink> ret=new ArrayList<RelationLink>();
@@ -165,6 +172,7 @@ public class EditableRelation implements Relation
     return ret;
   }
 
+  @Override
   public List<RelationLink> getLinksFrom(RelationTier tier)
   {
     List<RelationLink> ret=new ArrayList<RelationLink>();
@@ -178,6 +186,7 @@ public class EditableRelation implements Relation
     return ret;
   }
 
+  @Override
   public int getNumberOfTier()
   {
     return _tiers.length;

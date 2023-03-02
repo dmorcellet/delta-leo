@@ -35,16 +35,19 @@ public class EditableRelationLink implements RelationLink
     _ordered=false;
   }
 
+  @Override
   public RelationTier getSource()
   {
     return _source;
   }
 
+  @Override
   public RelationTier getTarget()
   {
     return _target;
   }
 
+  @Override
   public int getMinOccurrences()
   {
     return _minOccurrences;
@@ -64,6 +67,7 @@ public class EditableRelationLink implements RelationLink
     _minOccurrences=minOccurrences;
   }
 
+  @Override
   public int getMaxOccurrences()
   {
     return _maxOccurrences;
@@ -83,6 +87,7 @@ public class EditableRelationLink implements RelationLink
     _maxOccurrences=maxOccurrences;
   }
 
+  @Override
   public boolean isTraversable()
   {
     return _traversable;
@@ -97,6 +102,7 @@ public class EditableRelationLink implements RelationLink
     _traversable=traversable;
   }
 
+  @Override
   public boolean isOrdered()
   {
     return _ordered;
@@ -111,6 +117,7 @@ public class EditableRelationLink implements RelationLink
     _ordered=ordered;
   }
 
+  @Override
   public String getLabel()
   {
     return _label;

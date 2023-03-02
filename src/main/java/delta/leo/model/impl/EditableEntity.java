@@ -51,11 +51,13 @@ public class EditableEntity implements Entity
     _fieldsList=new ListOrderedMap<EditableField>();
   }
 
+  @Override
   public String getName()
   {
     return _name;
   }
 
+  @Override
   public Entity getSuperEntity()
   {
     return _superEntity;
@@ -66,6 +68,7 @@ public class EditableEntity implements Entity
    * @param entity Entity to test.
    * @return <code>true</code> or <code>false</code>.
    */
+  @Override
   public boolean isInstanceOf(Entity entity)
   {
     if (entity==this) return true;
@@ -90,6 +93,7 @@ public class EditableEntity implements Entity
     return newField;
   }
 
+  @Override
   public Field getField(String fieldName)
   {
     return getEditableField(fieldName);
@@ -98,7 +102,7 @@ public class EditableEntity implements Entity
   /**
    * Get a field by name.
    * @param fieldName Name of the field to get.
-   * @return A field or <code>null</code> if there's no such field. 
+   * @return A field or <code>null</code> if there's no such field.
    */
   public EditableField getEditableField(String fieldName)
   {
@@ -113,6 +117,7 @@ public class EditableEntity implements Entity
     return f;
   }
 
+  @Override
   public List<Field> getFields()
   {
     List<Field> ret=new ArrayList<Field>();
@@ -127,6 +132,7 @@ public class EditableEntity implements Entity
     return ret;
   }
 
+  @Override
   public List<Field> getFields(SymbolicProperty property)
   {
     List<EditableField> fields=getEditableFields(property);
@@ -139,7 +145,7 @@ public class EditableEntity implements Entity
    * Get the fields that have a given property.
    * @param property Property to test.
    * @return A (possibly empty) list of all the fields of this entity
-   * that have the specified property (including fields defined in parent entities, if any). 
+   * that have the specified property (including fields defined in parent entities, if any).
    */
   public List<EditableField> getEditableFields(SymbolicProperty property)
   {
@@ -158,6 +164,7 @@ public class EditableEntity implements Entity
     return ret;
   }
 
+  @Override
   public List<Field> getFields(SymbolicPropertiesSet properties)
   {
     List<Field> ret=new ArrayList<Field>();
