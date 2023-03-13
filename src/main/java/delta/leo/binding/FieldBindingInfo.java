@@ -58,6 +58,10 @@ public class FieldBindingInfo extends ClassAndField
     _joins.add(join);
   }
 
+  /**
+   * Get joins.
+   * @return a list or joins (may be <code>null</code>).
+   */
   public List<Join> getJoins()
   {
     return _joins;

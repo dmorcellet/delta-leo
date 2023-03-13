@@ -110,7 +110,6 @@ public class SqlDataConnector extends DataConnector
 
       int nbColumns=metadata.getColumnCount();
       Object object;
-      int rowIndex=0;
       while (rs.next())
       {
         instance=clazz.newInstance();
@@ -124,7 +123,6 @@ public class SqlDataConnector extends DataConnector
             instance.setValue(field,object);
           }
         }
-        rowIndex++;
         ret.add(instance);
       }
       _pool.releaseConnection(connection);

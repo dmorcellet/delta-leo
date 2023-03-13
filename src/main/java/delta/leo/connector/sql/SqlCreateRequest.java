@@ -16,6 +16,10 @@ import delta.leo.data.ObjectInstance;
 import delta.leo.metadata.ObjectClass;
 import delta.leo.model.entity.field.Field;
 
+/**
+ * Create request manager.
+ * @author DAM
+ */
 public class SqlCreateRequest extends RequestManager
 {
   private String _sqlRequest;

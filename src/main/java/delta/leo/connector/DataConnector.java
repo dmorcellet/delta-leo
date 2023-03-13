@@ -45,16 +45,31 @@ public class DataConnector
     return true;
   }
 
+  /**
+   * Create an object.
+   * @param binding Class binding.
+   * @param instance Object instance.
+   */
   public void create(ClassBinding binding, ObjectInstance instance)
   {
     // Nothing to do...
   }
 
+  /**
+   * Read an object.
+   * @param id Object identifier.
+   * @return An object instance or <code>null</code>.
+   */
   public ObjectInstance get(ObjectId id)
   {
     return null;
   }
 
+  /**
+   * Get all instance of a single class.
+   * @param binding Class binding.
+   * @return A list of object instances, or <code>null</code>.
+   */
   public List<ObjectInstance> getAll(ClassBinding binding)
   {
     return null;

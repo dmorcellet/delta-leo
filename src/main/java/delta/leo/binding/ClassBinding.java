@@ -78,12 +78,25 @@ public class ClassBinding
     return _classNames;
   }
 
+  /**
+   * Get the binding info for a single table.
+   * @param tableName Table name.
+   * @return A table binding info or <code>null</code> if not found.
+   */
   public TableBindingInfo getTableBinding(String tableName)
   {
     TableBindingInfo tableInfo=_tableBindingsMap.get(tableName);
     return tableInfo;
   }
 
+  /**
+   * Add a field binding.
+   * @param tableName Table name.
+   * @param fieldName Column name.
+   * @param field Field description.
+   * @param properties Properties.
+   * @return A new field binding.
+   */
   public FieldBindingInfo addFieldBinding(String tableName, String fieldName, Field field, SymbolicPropertiesSet properties)
   {
     if (field!=null)

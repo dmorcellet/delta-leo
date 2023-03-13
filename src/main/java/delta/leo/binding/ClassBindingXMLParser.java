@@ -16,6 +16,7 @@ import delta.leo.metadata.ObjectsModel;
 import delta.leo.model.entity.field.Field;
 
 /**
+ * XML parser for class bindings.
  * @author DAM
  */
 public class ClassBindingXMLParser
@@ -37,12 +38,21 @@ public class ClassBindingXMLParser
   private PropertiesXMLParser _propertiesParser;
   private SymbolicPropertiesRegistry _propertiesRegistry;
 
+  /**
+   * Constructor.
+   */
   public ClassBindingXMLParser()
   {
     _propertiesRegistry=BindingProperties.getBindingPropertiesRegistry();
     _propertiesParser=new PropertiesXMLParser(_propertiesRegistry);
   }
 
+  /**
+   * Parse a class binding from an XML node.
+   * @param model Model for storage.
+   * @param classBindingNode Input node.
+   * @return the loaded class binding or <code>null</code> if an error occurred.
+   */
   public ClassBinding parseClassBinding(ObjectsModel model, Element classBindingNode)
   {
     NamedNodeMap attrs=classBindingNode.getAttributes();

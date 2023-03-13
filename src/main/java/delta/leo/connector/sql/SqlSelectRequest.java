@@ -13,6 +13,10 @@ import delta.leo.binding.Join;
 import delta.leo.connector.RequestManager;
 import delta.leo.model.entity.field.Field;
 
+/**
+ * Select request manager.
+ * @author DAM
+ */
 public class SqlSelectRequest extends RequestManager
 {
   private String _sqlRequest;
