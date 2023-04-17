@@ -45,6 +45,10 @@ public class ObjectsManager
     _cache=new ObjectsCache();
   }
 
+  /**
+   * Get the associated class.
+   * @return a class.
+   */
   public ObjectClass getObjectClass()
   {
     return _class;
@@ -55,11 +59,19 @@ public class ObjectsManager
     return _binding;
   }
 
+  /**
+   * Lock an object.
+   * @param object Object to lock.
+   */
   public void lockObject(ObjectInstance object)
   {
     // todo
   }
 
+  /**
+   * Create an object.
+   * @param object Object to persist.
+   */
   public void create(ObjectInstance object)
   {
     DataConnector connector=_source.getConnector();
@@ -67,6 +79,11 @@ public class ObjectsManager
     _cache.put(object);
   }
 
+  /**
+   * Get an object.
+   * @param id Object identifier.
+   * @return An object instance or <code>null</code>.
+   */
   public ObjectInstance get(ObjectId id)
   {
     ObjectInstance ret=_cache.get(id);
@@ -82,6 +99,10 @@ public class ObjectsManager
     return ret;
   }
 
+  /**
+   * Get all the managed instances.
+   * @return A list of object instances.
+   */
   public List<ObjectInstance> getAll()
   {
     DataConnector connector=_source.getConnector();
@@ -99,6 +120,10 @@ public class ObjectsManager
     return ret;
   }
 
+  /**
+   * Unlock an object.
+   * @param object Object to unlock.
+   */
   public void unlockObject(ObjectInstance object)
   {
     // todo

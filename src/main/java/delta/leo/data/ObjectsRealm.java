@@ -12,6 +12,7 @@ import delta.leo.location.DataLocation;
 import delta.leo.metadata.ObjectsModel;
 
 /**
+ * Objects realm.
  * @author DAM
  */
 public class ObjectsRealm
@@ -43,12 +44,18 @@ public class ObjectsRealm
     return _model;
   }
 
+  /**
+   * Start.
+   */
   public void start()
   {
     buildObjectsSources();
     initObjectsSources();
   }
 
+  /**
+   * Terminate.
+   */
   public void terminate()
   {
     terminateObjectSources();

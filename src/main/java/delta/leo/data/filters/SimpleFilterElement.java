@@ -39,10 +39,20 @@ public class SimpleFilterElement extends FilterElement
     _value=value;
   }
 
+  /**
+   * Get the condition type.
+   * @return A condition type code.
+   */
+  public int getCondition()
+  {
+    return _condition;
+  }
+
   @Override
   public boolean match(ObjectInstance o)
   {
     Field field=_value.getField();
+    @SuppressWarnings("unused")
     Object value=o.getValue(field);
     // todo real code
     boolean match=true;

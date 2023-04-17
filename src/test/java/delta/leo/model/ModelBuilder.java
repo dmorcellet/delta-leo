@@ -10,10 +10,16 @@ import delta.leo.model.relation.impl.EditableRelationLink;
 import delta.leo.model.relation.impl.EditableRelationTier;
 
 /**
+ * Builder for the "genea" model.
  * @author DAM
  */
 public class ModelBuilder
 {
+  /**
+   * Build the "genea" model.
+   * @return A model.
+   */
+  @SuppressWarnings("unused")
   public Model buildModel()
   {
     EditableModel model=new EditableModel("genea");
@@ -56,6 +62,10 @@ public class ModelBuilder
     return model;
   }
 
+  /**
+   * Main method for this test.
+   * @param args Not used.
+   */
   public static void main(String[] args)
   {
     Model model=new ModelBuilder().buildModel();

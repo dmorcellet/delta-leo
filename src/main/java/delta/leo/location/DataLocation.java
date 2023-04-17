@@ -6,6 +6,9 @@ package delta.leo.location;
  */
 public abstract class DataLocation
 {
+  /**
+   * Default location name.
+   */
   public static final String DEFAULT="DefaultLocation";
 
   private String _id;
@@ -28,5 +31,9 @@ public abstract class DataLocation
     return _id;
   }
 
+  /**
+   * Get the data location type.
+   * @return a data location type.
+   */
   public abstract DataLocationType getType();
 }

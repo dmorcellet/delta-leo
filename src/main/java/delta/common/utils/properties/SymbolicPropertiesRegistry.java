@@ -75,6 +75,11 @@ public class SymbolicPropertiesRegistry
     return set;
   }
 
+  /**
+   * Indicates if the given property is known or not.
+   * @param property Property to use.
+   * @return <code>true</code> if known, <code>false</code> otherwise.
+   */
   public boolean hasProperty(SymbolicProperty property)
   {
     return _properties.containsValue(property);

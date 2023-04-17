@@ -14,17 +14,29 @@ public class ObjectsCache
 
   private HashMap<ObjectId,ObjectInstance> _cache;
 
+  /**
+   * Constructor.
+   */
   public ObjectsCache()
   {
     _cache=new HashMap<ObjectId,ObjectInstance>();
   }
 
+  /**
+   * Get an object using its identifier.
+   * @param id Identifier of the object to get.
+   * @return An object or <code>null</code> if not found.
+   */
   public ObjectInstance get(ObjectId id)
   {
     ObjectInstance ret=_cache.get(id);
     return ret;
   }
 
+  /**
+   * Store an object.
+   * @param object Object to store.
+   */
   public void put(ObjectInstance object)
   {
     ObjectId id=object.getId();
@@ -45,6 +57,10 @@ public class ObjectsCache
     }
   }
 
+  /**
+   * Get the size of this cache.
+   * @return An count of objects.
+   */
   public int getSize()
   {
     return _cache.size();

@@ -271,6 +271,7 @@ public class SqlCreateRequest extends RequestManager
     private FieldBindingInfo _fieldInfo;
     private Object _value;
     private boolean _set;
+    @SuppressWarnings("unused")
     private boolean _auto;
 
     FieldCreateInfos(FieldBindingInfo info)

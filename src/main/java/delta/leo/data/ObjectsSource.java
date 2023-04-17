@@ -73,16 +73,29 @@ public class ObjectsSource
     return ret;
   }
 
+  /**
+   * Get the name of the managed location.
+   * @return A name.
+   */
   public String getName()
   {
     return _location.getId();
   }
 
+  /**
+   * Get the managed connector.
+   * @return the managed connector.
+   */
   public DataConnector getConnector()
   {
     return _connector;
   }
 
+  /**
+   * Get the objects manager for the given class.
+   * @param className Name of the class to use.
+   * @return An object manager or <code>null</code> if not known.
+   */
   public ObjectsManager getManager(String className)
   {
     ObjectsManager ret=_objectsManagers.get(className);
@@ -104,18 +117,30 @@ public class ObjectsSource
     return ret;
   }
 
+  /**
+   * Init.
+   * @return <code>true</code> if it succeeds, <code>false</code> otherwise.
+   */
   public boolean init()
   {
     boolean ret=_connector.init();
     return ret;
   }
 
+  /**
+   * Terminate.
+   * @return <code>true</code> if it succeeds, <code>false</code> otherwise.
+   */
   public boolean terminate()
   {
     boolean ret=_connector.terminate();
     return ret;
   }
 
+  /**
+   * Create (persist) an object instance.
+   * @param object Object to create.
+   */
   public void create(ObjectInstance object)
   {
     ObjectClass clazz=object.getObjectClass();
@@ -126,6 +151,11 @@ public class ObjectsSource
     oid.setObjectsSource(this);
   }
 
+  /**
+   * Get an object.
+   * @param id Object identifier.
+   * @return An object instance or <code>null</code>.
+   */
   public ObjectInstance get(ObjectId id)
   {
     ObjectClass clazz=id.getClassInfo();
@@ -135,6 +165,11 @@ public class ObjectsSource
     return ret;
   }
 
+  /**
+   * Get all the managed instances.
+   * @param clazz Targeted class.
+   * @return A list of object instances.
+   */
   public List<ObjectInstance> getAll(ObjectClass clazz)
   {
     String className=clazz.getName();

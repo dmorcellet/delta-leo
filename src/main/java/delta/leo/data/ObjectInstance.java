@@ -5,6 +5,10 @@ import java.util.List;
 import delta.leo.metadata.ObjectClass;
 import delta.leo.model.entity.field.Field;
 
+/**
+ * Instance of a class.
+ * @author DAM
+ */
 public class ObjectInstance
 {
   private ObjectClass _objectClass;
@@ -13,6 +17,10 @@ public class ObjectInstance
 
   // todo manage object state flags (id locked, locked, modified...)
 
+  /**
+   * Constructor.
+   * @param classInfo Associated class.
+   */
   public ObjectInstance(ObjectClass classInfo)
   {
     _objectClass=classInfo;
@@ -20,22 +28,41 @@ public class ObjectInstance
     _values=new ObjectValue(classInfo);
   }
 
+  /**
+   * Get the associated class.
+   * @return a class.
+   */
   public ObjectClass getObjectClass()
   {
     return _objectClass;
   }
 
+  /**
+   * Get the object identifier.
+   * @return an object identifier.
+   */
   public ObjectId getId()
   {
     return _id;
   }
 
+  /**
+   * Get the value for a given field.
+   * @param field Field to use.
+   * @return A value or <code>null</code>.
+   */
   public Object getValue(Field field)
   {
     Object ret=_values.getValue(field);
     return ret;
   }
 
+  /**
+   * Set the value for a field.
+   * @param field Field to use.
+   * @param value Value to set.
+   * @return <code>true</code> if operation succeeded, <code>false</code> otherwise.
+   */
   public boolean setValue(Field field, Object value)
   {
     boolean ret=_values.setValue(field,value);
@@ -51,6 +78,10 @@ public class ObjectInstance
     return ret;
   }
 
+  /**
+   * Check the value of this object.
+   * @return <code>true</code> if check is OK, <code>false</code> otherwise.
+   */
   public boolean checkValues()
   {
     return true;

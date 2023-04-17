@@ -7,6 +7,10 @@ import junit.framework.TestCase;
 import delta.common.utils.url.URLTools;
 import delta.leo.model.Model;
 
+/**
+ * Test class for model parsing.
+ * @author DAM
+ */
 public class TestParseModel extends TestCase
 {
   /**
@@ -17,6 +21,9 @@ public class TestParseModel extends TestCase
     super("Parse model");
   }
 
+  /**
+   * Test model parsing.
+   */
   public void testParseModel()
   {
     ModelXMLParser parser=new ModelXMLParser();

@@ -12,8 +12,15 @@ import delta.leo.metadata.ObjectClass;
 import delta.leo.metadata.ObjectsModel;
 import delta.leo.model.entity.field.Field;
 
+/**
+ * Test class for LEO features.
+ * @author DAM
+ */
 public class MainLeoTest
 {
+  /**
+   * Test code.
+   */
   public static void doIt()
   {
     String packageName="delta.leo.examples.genea";
@@ -89,7 +96,7 @@ public class MainLeoTest
 
     if (true)
     {
-      List<ObjectInstance> allInstances=sqlSource.getAll(objectClass);
+      /*List<ObjectInstance> allInstances=*/sqlSource.getAll(objectClass);
       ObjectId oid=new ObjectId(sqlSource,objectClass,new Object[]{Integer.valueOf(76)});
       ObjectInstance object=sqlSource.get(oid);
       if (object!=null)
@@ -116,6 +123,10 @@ public class MainLeoTest
     realm.terminate();
   }
 
+  /**
+   * Main method for this test.
+   * @param args Not used.
+   */
   public static void main(String[] args)
   {
     doIt();

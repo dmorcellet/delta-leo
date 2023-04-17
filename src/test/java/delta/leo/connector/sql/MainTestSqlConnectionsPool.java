@@ -4,8 +4,15 @@ import java.sql.Connection;
 
 import delta.leo.location.sql.SqlDataLocation;
 
+/**
+ * Test class for the SQL connections pool.
+ * @author DAM
+ */
 public class MainTestSqlConnectionsPool
 {
+  /**
+   * Constructor.
+   */
   public MainTestSqlConnectionsPool()
   {
     byte nbMax=5;
@@ -31,9 +38,12 @@ public class MainTestSqlConnectionsPool
     pool.terminate();
   }
 
+  /**
+   * Main method for this test.
+   * @param args Not used.
+   */
   public static void main(String[] args)
   {
     new MainTestSqlConnectionsPool();
   }
-
 }

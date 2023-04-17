@@ -7,20 +7,31 @@ import java.util.Iterator;
 import delta.leo.data.values.FieldValue;
 import delta.leo.model.entity.field.Field;
 
+/**
+ * Simple implementation of a values set.
+ * @author DAM
+ */
 public class SimpleValueSet implements ValueSet
 {
   private HashMap<Field, FieldValue> _values;
 
+  /**
+   * Constructor.
+   */
   public SimpleValueSet()
   {
     _values=new HashMap<Field, FieldValue>();
   }
 
+  /**
+   * Set some values.
+   * @param values Values to set.
+   */
   public void setValues(ValueSet values)
   {
-    Collection<FieldValue> collection_l=values.getValues();
+    Collection<FieldValue> collection=values.getValues();
     FieldValue value;
-    for(Iterator<FieldValue> it=collection_l.iterator();it.hasNext();)
+    for(Iterator<FieldValue> it=collection.iterator();it.hasNext();)
     {
       value=it.next();
       _values.put(value.getField(),value);

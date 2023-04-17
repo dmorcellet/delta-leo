@@ -9,6 +9,10 @@ import delta.leo.model.io.xml.ModelXMLParser;
 import delta.leo.model.relation.Relation;
 import delta.leo.model.relation.RelationLink;
 
+/**
+ * Test relations.
+ * @author dmorcellet
+ */
 public class TestRelations extends TestCase
 {
   /**
@@ -16,9 +20,12 @@ public class TestRelations extends TestCase
    */
   public TestRelations()
   {
-    super("Model test");
+    super("Relations test");
   }
 
+  /**
+   * Test relations.
+   */
   public void testRelations()
   {
     // Load model

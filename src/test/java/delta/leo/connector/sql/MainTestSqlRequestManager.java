@@ -12,8 +12,15 @@ import delta.leo.metadata.ObjectClass;
 import delta.leo.metadata.ObjectsModel;
 import delta.leo.model.entity.field.Field;
 
+/**
+ * Test class for the SQL requests manager.
+ * @author DAM
+ */
 public class MainTestSqlRequestManager
 {
+  /**
+   * Constructor.
+   */
   public MainTestSqlRequestManager()
   {
     long now1=System.currentTimeMillis();
@@ -48,6 +55,10 @@ public class MainTestSqlRequestManager
     System.out.println("Time : "+(now3-now1)+"ms");
   }
 
+  /**
+   * Main method for this test.
+   * @param args Not used.
+   */
   public static void main(String[] args)
   {
     new MainTestSqlRequestManager();

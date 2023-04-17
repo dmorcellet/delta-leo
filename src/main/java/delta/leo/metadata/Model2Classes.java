@@ -10,10 +10,19 @@ import delta.leo.model.Model;
 import delta.leo.model.entity.Entity;
 import delta.leo.model.relation.RelationLink;
 
+/**
+ * Build classes from a model.
+ * @author DAM
+ */
 public class Model2Classes
 {
 	private TreeMap<String,ObjectClass> _builtClasses;
 
+	/**
+	 * Build class that implement a model.
+	 * @param model Model to use.
+	 * @return A list of classes.
+	 */
 	public List<ObjectClass> build(Model model)
 	{
 		List<Entity> entities=model.getEntities();

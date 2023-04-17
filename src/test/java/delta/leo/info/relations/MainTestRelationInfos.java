@@ -3,8 +3,15 @@ package delta.leo.info.relations;
 import delta.leo.model.entity.Entity;
 import delta.leo.model.impl.EditableEntity;
 
+/**
+ * Test class for relation infos.
+ * @author DAM
+ */
 public class MainTestRelationInfos
 {
+  /**
+   * Constructor.
+   */
   public MainTestRelationInfos()
   {
     Entity a=new EditableEntity("A");
@@ -21,6 +28,10 @@ public class MainTestRelationInfos
     System.out.println(cri);
   }
 
+  /**
+   * Main method for this test.
+   * @param args Not used.
+   */
   public static void main(String[] args)
   {
     new MainTestRelationInfos();

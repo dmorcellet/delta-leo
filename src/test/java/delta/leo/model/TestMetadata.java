@@ -7,6 +7,10 @@ import delta.common.utils.url.URLTools;
 import delta.leo.metadata.Model2Classes;
 import delta.leo.model.io.xml.ModelXMLParser;
 
+/**
+ * Test class for metadata.
+ * @author DAM
+ */
 public class TestMetadata extends TestCase
 {
   /**
@@ -17,6 +21,9 @@ public class TestMetadata extends TestCase
     super("Metadata test");
   }
 
+  /**
+   * Test object class.
+   */
   public void testObjectClass()
   {
     // Load model

@@ -1,6 +1,9 @@
 package delta.leo.info;
 
-
+/**
+ * Test class for "info" features.
+ * @author DAM
+ */
 public class MainTestInfos
 {
   private static void go()
@@ -46,6 +49,10 @@ public class MainTestInfos
 */
   }
 
+  /**
+   * Main method for this test.
+   * @param args Not used.
+   */
   public static void main(String[] args)
   {
     go();
